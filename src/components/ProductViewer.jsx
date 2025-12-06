@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { Canvas } from '@react-three/fiber';
 import { Box, OrbitControls } from '@react-three/drei';
 import MacbookModel14 from '../components/models/Macbook-14';
+import StudioLights from './StudioLights';
 
 const ProductViewer = () => {
 
@@ -52,6 +53,7 @@ const ProductViewer = () => {
 
             <Canvas id='canvas' camera={{position: [0,0,5]}}>
                 <ambientLight intensity={2}/>
+                <StudioLights/>
                 <MacbookModel14 scale={0.06} position={[0,0,0]}/>
                 <OrbitControls />
             </Canvas>
