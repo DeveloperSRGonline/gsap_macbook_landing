@@ -2,6 +2,7 @@ import useMacBookStore from '../store'
 import clsx from 'clsx';
 import { Canvas } from '@react-three/fiber';
 import { Box, OrbitControls } from '@react-three/drei';
+import MacbookModel14 from '../components/models/Macbook-14';
 
 const ProductViewer = () => {
 
@@ -50,7 +51,8 @@ const ProductViewer = () => {
             </div>
 
             <Canvas id='canvas' camera={{position: [0,0,5]}}>
-                <Box material-color={color}/>
+                <ambientLight intensity={2}/>
+                <MacbookModel14 scale={0.06} position={[0,0,0]}/>
                 <OrbitControls />
             </Canvas>
         </section>
