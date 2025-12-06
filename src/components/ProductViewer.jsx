@@ -3,12 +3,16 @@ import clsx from 'clsx';
 import { Canvas } from '@react-three/fiber';
 import { Box, OrbitControls } from '@react-three/drei';
 import MacbookModel14 from '../components/models/Macbook-14';
-import StudioLights from './StudioLights';
+import StudioLights from './three/StudioLights';
+import ModelSwitcher from './three/ModelSwitcher';
+import { useMediaQuery } from 'react-responsive';
 
 const ProductViewer = () => {
-
     // to manage the state with the global state management
     const { color, scale, setColor, setScale, reset } = useMacBookStore();
+
+    // we check is this mobile screen
+    const isMobile = useMediaQuery({query:'(max-width:1024px)'})
 
     return (
         <section id='product-viewer'>
@@ -51,11 +55,11 @@ const ProductViewer = () => {
                 </div>
             </div>
 
+            {/* for rendering the 3d model */}
             <Canvas id='canvas' camera={{position: [0,0,5]}}>
                 <ambientLight intensity={2}/>
                 <StudioLights/>
-                <MacbookModel14 scale={0.06} position={[0,0,0]}/>
-                <OrbitControls />
+                <ModelSwitcher isMobile={isMobile} scale={isMobile ? '0.06' : scale} />
             </Canvas>
         </section>
     )
