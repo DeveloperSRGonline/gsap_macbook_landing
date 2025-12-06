@@ -40,8 +40,8 @@ export default function MacbookModel14(props) {
       <mesh geometry={nodes.Object_123.geometry} material={materials.sfCQkHOWyrsLmor} rotation={[Math.PI / 2, 0, 0]} >
         <meshStandardMaterial
           map={texture}
-          metalness={0.2}
-          roughness={0.3}
+          metalness={0.1}
+          roughness={0.6}
         />
       </mesh>
       <mesh geometry={nodes.Object_127.geometry} material={materials.ZCDwChwkbBfITSW} rotation={[Math.PI / 2, 0, 0]} />
